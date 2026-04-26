@@ -15,7 +15,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
 
 echo "==> Cloning repo to $INSTALL_DIR"
-git clone "$REPO_URL" "$INSTALL_DIR"
+git clone "https://github.com/johannesemme/mlops.git" "$INSTALL_DIR"
 cd "$INSTALL_DIR"
 
 echo "==> Installing dependencies"
@@ -36,6 +36,7 @@ cp deploy/dagster-webserver.service /etc/systemd/system/
 cp deploy/dagster-daemon.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable --now dagster-webserver dagster-daemon
+systemctl restart dagster-webserver dagster-daemon
 
 echo ""
 echo "Done. Dagster is running."
