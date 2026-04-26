@@ -10,6 +10,11 @@ if [ -z "$REPO_URL" ]; then
     exit 1
 fi
 
+echo "==> Installing Node.js and Claude Code"
+curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+apt-get install -y nodejs
+npm install -g @anthropic-ai/claude-code
+
 echo "==> Installing uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
