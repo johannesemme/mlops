@@ -1,0 +1,13 @@
+[Unit]
+Description=Dagster Daemon
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/mlops
+EnvironmentFile=/opt/mlops/.env
+ExecStart=/opt/mlops/.venv/bin/dagster-daemon run
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
