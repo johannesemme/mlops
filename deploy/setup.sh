@@ -15,7 +15,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
 
 echo "==> Cloning repo to $INSTALL_DIR"
-git clone "https://github.com/johannesemme/mlops.git" "$INSTALL_DIR"
+git clone "$REPO_URL" "$INSTALL_DIR"
 cd "$INSTALL_DIR"
 
 echo "==> Installing dependencies"
