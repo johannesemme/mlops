@@ -5,6 +5,7 @@ After=network.target
 [Service]
 WorkingDirectory=/opt/mlops
 EnvironmentFile=/opt/mlops/.env
+Environment=HOME=/root
 ExecStart=/opt/mlops/.venv/bin/dagster-webserver -h 0.0.0.0 -p 3000
 Restart=on-failure
 RestartSec=5
