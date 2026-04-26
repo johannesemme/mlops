@@ -29,9 +29,9 @@ uv sync
 echo "==> Creating .env"
 cp .env.example .env
 echo ""
-echo "Edit $INSTALL_DIR/.env and set MOTHERDUCK_TOKEN, ENV, and DAGSTER_HOME=$DAGSTER_HOME"
-echo "Then press Enter to continue."
-read -r
+echo "Opening .env for editing — set MOTHERDUCK_TOKEN, ENV, and DAGSTER_HOME=$DAGSTER_HOME"
+sleep 2
+nano .env
 
 echo "==> Creating Dagster home directory"
 mkdir -p "$DAGSTER_HOME"
